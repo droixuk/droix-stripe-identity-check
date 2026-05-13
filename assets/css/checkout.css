@@ -1,0 +1,92 @@
+/**
+ * DSIC Checkout Styles
+ *
+ * Styles for the checkout verification notice.
+ *
+ * @package DSIC
+ * @since   1.6.0
+ */
+
+/* Checkout Notice */
+.dsic-checkout-notice {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 16px 20px;
+	margin-bottom: 20px;
+	background-color: #fef3c7;
+	border-left: 4px solid #f59e0b;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #92400e;
+}
+
+.dsic-checkout-notice .dsic-notice-icon::before {
+	content: "\26A0\FE0F"; /* Warning emoji */
+	font-size: 18px;
+	line-height: 1;
+}
+
+.dsic-checkout-notice .dsic-notice-text {
+	flex: 1;
+}
+
+/* Thank You Page Notice */
+.dsic-thankyou-notice {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 20px 24px;
+	margin-bottom: 24px;
+	background-color: #eff6ff;
+	border-left: 4px solid #3b82f6;
+	border-radius: 4px;
+	font-size: 15px;
+	line-height: 1.6;
+	color: #1e40af;
+}
+
+.dsic-thankyou-notice .dsic-notice-icon::before {
+	content: "\1F4E7"; /* Email emoji */
+	font-size: 20px;
+	line-height: 1;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+	.dsic-checkout-notice,
+	.dsic-thankyou-notice {
+		padding: 14px 16px;
+		font-size: 13px;
+	}
+
+	.dsic-checkout-notice .dsic-notice-icon::before,
+	.dsic-thankyou-notice .dsic-notice-icon::before {
+		font-size: 16px;
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.dsic-checkout-notice {
+		background-color: #fff8dc;
+		border-left-color: #cc7a00;
+		color: #000;
+	}
+
+	.dsic-thankyou-notice {
+		background-color: #e6f0ff;
+		border-left-color: #0066cc;
+		color: #000;
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.dsic-checkout-notice,
+	.dsic-thankyou-notice {
+		animation: none;
+		transition: none;
+	}
+}

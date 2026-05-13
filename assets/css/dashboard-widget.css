@@ -1,0 +1,304 @@
+/**
+ * Dashboard Widget Styles
+ *
+ * @package DSIC
+ * @since 0.3.1
+ */
+
+/* Widget Container */
+.dsic-widget {
+	margin: -12px;
+}
+
+/* Summary Stats Grid */
+.dsic-widget-summary {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	padding: 15px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.dsic-stat-box {
+	text-align: center;
+	padding: 10px 5px;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dsic-stat-number {
+	display: block;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.dsic-stat-label {
+	display: block;
+	font-size: 11px;
+	color: #646970;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-top: 4px;
+}
+
+.dsic-stat-verified .dsic-stat-number {
+	color: #00a32a;
+}
+
+.dsic-stat-pending .dsic-stat-number {
+	color: #dba617;
+}
+
+.dsic-stat-failed .dsic-stat-number {
+	color: #d63638;
+}
+
+/* Success Rate Bar */
+.dsic-widget-rate {
+	padding: 15px;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.dsic-rate-bar {
+	height: 8px;
+	background: #f0f0f1;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+.dsic-rate-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #00a32a 0%, #4ab866 100%);
+	border-radius: 4px;
+	transition: width 0.3s ease;
+}
+
+.dsic-rate-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dsic-rate-number {
+	font-size: 18px;
+	font-weight: 600;
+	color: #00a32a;
+}
+
+.dsic-rate-label {
+	font-size: 12px;
+	color: #646970;
+}
+
+/* Period Stats Table */
+.dsic-widget-periods {
+	padding: 0;
+}
+
+.dsic-periods-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.dsic-periods-table th {
+	text-align: left;
+	padding: 10px 15px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.dsic-periods-table td {
+	padding: 8px 15px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.dsic-periods-table tbody tr:last-child td {
+	border-bottom: 1px solid #dcdcde;
+}
+
+.dsic-col-center {
+	text-align: center !important;
+}
+
+.dsic-text-success {
+	color: #00a32a;
+	font-weight: 500;
+}
+
+.dsic-text-danger {
+	color: #d63638;
+	font-weight: 500;
+}
+
+/* Recent Verifications */
+.dsic-widget-recent {
+	padding: 15px;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.dsic-widget-recent h4 {
+	margin: 0 0 10px;
+	font-size: 13px;
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.dsic-recent-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.dsic-recent-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 6px 0;
+	font-size: 13px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.dsic-recent-item:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.dsic-recent-order {
+	font-weight: 500;
+	text-decoration: none;
+	color: #2271b1;
+}
+
+.dsic-recent-order:hover {
+	color: #135e96;
+}
+
+.dsic-recent-customer {
+	flex: 1;
+	color: #646970;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.dsic-recent-status {
+	font-size: 11px;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.dsic-status-verified {
+	background: #edfaef;
+	color: #00a32a;
+}
+
+.dsic-status-pending {
+	background: #fcf9e8;
+	color: #996800;
+}
+
+.dsic-status-failed {
+	background: #fcf0f1;
+	color: #d63638;
+}
+
+/* Widget Footer */
+.dsic-widget-footer {
+	padding: 12px 15px;
+	text-align: right;
+}
+
+.dsic-view-all {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 13px;
+	text-decoration: none;
+	color: #2271b1;
+}
+
+.dsic-view-all:hover {
+	color: #135e96;
+}
+
+.dsic-view-all .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* API Warning */
+.dsic-widget-warning {
+	padding: 15px;
+}
+
+.dsic-api-warning {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	padding: 16px;
+	background: #fcf0f1;
+	border-left: 4px solid #d63638;
+	border-radius: 4px;
+}
+
+.dsic-api-warning > .dashicons {
+	color: #d63638;
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+}
+
+.dsic-warning-content {
+	flex: 1;
+}
+
+.dsic-warning-content strong {
+	display: block;
+	font-size: 14px;
+	color: #d63638;
+	margin-bottom: 6px;
+}
+
+.dsic-warning-content p {
+	margin: 0 0 12px;
+	font-size: 13px;
+	color: #50575e;
+	line-height: 1.5;
+}
+
+.dsic-warning-content .button {
+	margin-top: 4px;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+	.dsic-widget-summary {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+		padding: 10px;
+	}
+
+	.dsic-stat-number {
+		font-size: 20px;
+	}
+
+	.dsic-stat-label {
+		font-size: 10px;
+	}
+
+	.dsic-api-warning {
+		flex-direction: column;
+		gap: 8px;
+	}
+}

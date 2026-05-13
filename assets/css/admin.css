@@ -1,0 +1,1227 @@
+/**
+ * Admin styles for Stripe ID Check plugin.
+ *
+ * @package DSIC
+ * @since   0.0.1
+ */
+
+/* Settings Page Layout */
+.dsic-settings-wrap {
+	max-width: 1200px;
+}
+
+.dsic-settings-wrap h1 {
+	margin-bottom: 20px;
+}
+
+.dsic-tabs {
+	margin-bottom: 20px;
+}
+
+.dsic-settings-content {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+.dsic-form-table {
+	margin-top: 0;
+}
+
+.dsic-form-table th {
+	padding-left: 0;
+	width: 200px;
+}
+
+.dsic-form-table td {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+/* Toggle Switch */
+.dsic-toggle {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 26px;
+}
+
+.dsic-toggle input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.dsic-toggle-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: 0.3s;
+	border-radius: 26px;
+}
+
+.dsic-toggle-slider::before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	left: 3px;
+	bottom: 3px;
+	background-color: #fff;
+	transition: 0.3s;
+	border-radius: 50%;
+}
+
+.dsic-toggle input:checked + .dsic-toggle-slider {
+	background-color: #2271b1;
+}
+
+.dsic-toggle input:checked + .dsic-toggle-slider::before {
+	transform: translateX(24px);
+}
+
+.dsic-toggle input:focus + .dsic-toggle-slider {
+	box-shadow: 0 0 0 2px #2271b1;
+}
+
+/* Password Field with Toggle */
+.dsic-password-field {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.dsic-password-field input {
+	flex: 1;
+	max-width: 400px;
+}
+
+.dsic-toggle-password {
+	padding: 4px 8px !important;
+	min-height: 30px;
+}
+
+.dsic-toggle-password .dashicons {
+	margin-top: 3px;
+}
+
+/* Copy Field */
+.dsic-copy-field {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.dsic-copy-field code {
+	padding: 8px 12px;
+	background: #f0f0f1;
+	border-radius: 4px;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.dsic-copy-button {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.dsic-copy-button .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* Connection Status */
+.dsic-status {
+	display: inline-block;
+	margin-left: 10px;
+	padding: 4px 12px;
+	border-radius: 4px;
+	font-size: 13px;
+}
+
+.dsic-status.dsic-status-loading {
+	background: #f0f6fc;
+	color: #2271b1;
+}
+
+.dsic-status.dsic-status-success {
+	background: #edfaef;
+	color: #00a32a;
+}
+
+.dsic-status.dsic-status-error {
+	background: #fcf0f1;
+	color: #d63638;
+}
+
+/* Description Warning */
+.dsic-warning {
+	color: #d63638;
+}
+
+/* System Info */
+.dsic-system-info {
+	background: #f0f0f1;
+	padding: 15px;
+	border-radius: 4px;
+}
+
+.dsic-system-info p {
+	margin: 5px 0;
+}
+
+/* Log Viewer */
+.dsic-log-viewer textarea {
+	font-family: monospace;
+	font-size: 12px;
+	line-height: 1.5;
+	background: #1d2327;
+	color: #c3c4c7;
+	border: none;
+	resize: vertical;
+}
+
+.dsic-log-actions {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.dsic-log-actions .button {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.dsic-log-actions .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+.dsic-danger {
+	color: #d63638 !important;
+	border-color: #d63638 !important;
+}
+
+.dsic-danger:hover {
+	background: #d63638 !important;
+	color: #fff !important;
+}
+
+/* Overview Cards */
+.dsic-overview-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
+	margin-top: 20px;
+}
+
+.dsic-card {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+.dsic-card h2 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+.dsic-card p {
+	color: #646970;
+	margin-bottom: 15px;
+}
+
+/* Verification Status Badges */
+.dsic-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px 10px;
+	border-radius: 12px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.dsic-badge-pending {
+	background: #fcf9e8;
+	color: #996800;
+}
+
+.dsic-badge-verified {
+	background: #edfaef;
+	color: #00a32a;
+}
+
+.dsic-badge-failed {
+	background: #fcf0f1;
+	color: #d63638;
+}
+
+.dsic-badge-none {
+	background: #f0f0f1;
+	color: #646970;
+}
+
+/* Spinner */
+.dsic-spinner {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #2271b1;
+	border-radius: 50%;
+	animation: dsic-spin 1s linear infinite;
+}
+
+@keyframes dsic-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* =============================================
+   Statistics Page Styles
+   ============================================= */
+
+/* Stats Overview Cards */
+.dsic-stats-page {
+	margin-top: 10px;
+}
+
+.dsic-stats-overview {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.dsic-stat-card {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dsic-stat-icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dsic-stat-icon .dashicons {
+	font-size: 24px;
+	width: 24px;
+	height: 24px;
+	color: #fff;
+}
+
+.dsic-stat-total .dsic-stat-icon {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+}
+
+.dsic-stat-verified .dsic-stat-icon {
+	background: linear-gradient(135deg, #00a32a 0%, #008a20 100%);
+}
+
+.dsic-stat-pending .dsic-stat-icon {
+	background: linear-gradient(135deg, #dba617 0%, #c69500 100%);
+}
+
+.dsic-stat-failed .dsic-stat-icon {
+	background: linear-gradient(135deg, #d63638 0%, #b32d2e 100%);
+}
+
+.dsic-stat-content {
+	flex: 1;
+}
+
+.dsic-stat-value {
+	display: block;
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: #1d2327;
+}
+
+.dsic-stat-title {
+	display: block;
+	font-size: 13px;
+	color: #646970;
+	margin-top: 4px;
+}
+
+/* Stats Row */
+.dsic-stats-row {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+/* Stats Box */
+.dsic-stats-box {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 20px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dsic-stats-box h3 {
+	margin: 0 0 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f0f0f1;
+	font-size: 15px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+/* Success Rate Circle */
+.dsic-success-rate {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+.dsic-rate-circle {
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+
+.dsic-rate-svg {
+	width: 100%;
+	height: 100%;
+	transform: rotate(-90deg);
+}
+
+.dsic-rate-bg {
+	fill: none;
+	stroke: #f0f0f1;
+	stroke-width: 3;
+}
+
+.dsic-rate-fg {
+	fill: none;
+	stroke: #00a32a;
+	stroke-width: 3;
+	stroke-linecap: round;
+	transition: stroke-dasharray 0.5s ease;
+}
+
+.dsic-rate-percent {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 22px;
+	font-weight: 600;
+	color: #00a32a;
+}
+
+.dsic-rate-details {
+	flex: 1;
+}
+
+.dsic-rate-details p {
+	margin: 8px 0;
+	font-size: 13px;
+	color: #646970;
+}
+
+.dsic-rate-details strong {
+	color: #1d2327;
+}
+
+/* Stats Table */
+.dsic-stats-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+
+.dsic-stats-table th {
+	text-align: left;
+	padding: 10px 12px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+	font-weight: 500;
+	color: #1d2327;
+}
+
+.dsic-stats-table td {
+	padding: 10px 12px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.dsic-stats-table tbody tr:hover {
+	background: #f9f9f9;
+}
+
+.dsic-text-success {
+	color: #00a32a;
+	font-weight: 500;
+}
+
+.dsic-text-danger {
+	color: #d63638;
+	font-weight: 500;
+}
+
+.dsic-text-warning {
+	color: #dba617;
+	font-weight: 500;
+}
+
+/* Status Badges */
+.dsic-status-badge {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: 12px;
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.dsic-status-verified {
+	background: #edfaef;
+	color: #00a32a;
+}
+
+.dsic-status-pending {
+	background: #fcf9e8;
+	color: #996800;
+}
+
+.dsic-status-failed {
+	background: #fcf0f1;
+	color: #d63638;
+}
+
+/* Recent Table */
+.dsic-recent-table td a {
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.dsic-recent-table td a:hover {
+	text-decoration: underline;
+}
+
+/* No Data */
+.dsic-no-data {
+	text-align: center;
+	color: #646970;
+	padding: 30px;
+	font-style: italic;
+}
+
+/* Stats Actions */
+.dsic-stats-actions {
+	margin-top: 20px;
+	padding-top: 15px;
+	border-top: 1px solid #dcdcde;
+}
+
+.dsic-stats-actions .button {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.dsic-stats-actions .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+	.dsic-stats-overview {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.dsic-stats-row {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.dsic-stats-overview {
+		grid-template-columns: 1fr;
+	}
+
+	.dsic-stat-card {
+		padding: 15px;
+	}
+
+	.dsic-stat-value {
+		font-size: 24px;
+	}
+
+	.dsic-success-rate {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+/* =============================================
+   Responsive Styles
+   ============================================= */
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+	.dsic-form-table th {
+		width: 100%;
+		display: block;
+		padding-bottom: 5px;
+	}
+
+	.dsic-form-table td {
+		display: block;
+		padding-left: 0;
+	}
+
+	.dsic-password-field {
+		flex-wrap: wrap;
+	}
+
+	.dsic-password-field input {
+		max-width: 100%;
+	}
+
+	.dsic-copy-field code {
+		font-size: 11px;
+	}
+}
+
+/* =============================================
+   Email Templates Styles
+   ============================================= */
+
+.dsic-email-templates {
+	max-width: 1400px;
+}
+
+.dsic-email-templates-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 20px;
+	margin-bottom: 25px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.dsic-email-templates-header .dsic-email-intro {
+	margin: 0;
+	flex: 1;
+}
+
+#dsic-reset-all-templates {
+	white-space: nowrap;
+	color: #d63638;
+	border-color: #d63638;
+}
+
+#dsic-reset-all-templates:hover {
+	background: #d63638;
+	border-color: #d63638;
+	color: #fff;
+}
+
+.dsic-email-intro {
+	margin: 0 0 20px;
+	color: #646970;
+}
+
+.dsic-template-section {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 20px;
+	margin-bottom: 25px;
+}
+
+.dsic-template-section:last-child {
+	margin-bottom: 0;
+}
+
+.dsic-template-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.dsic-template-header h2 {
+	margin: 0;
+	font-size: 18px;
+	color: #1d2327;
+}
+
+.dsic-template-status {
+	display: inline-block;
+	padding: 4px 12px;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.dsic-template-status.active {
+	background: #d5f6e3;
+	color: #00731f;
+}
+
+.dsic-template-status.inactive {
+	background: #f0f0f1;
+	color: #646970;
+}
+
+.dsic-template-desc {
+	margin: 0 0 20px;
+	color: #646970;
+}
+
+.dsic-field-group {
+	margin-bottom: 20px;
+}
+
+.dsic-field-group label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 8px;
+	font-size: 13px;
+	color: #1d2327;
+}
+
+.dsic-field-group input[type="text"] {
+	width: 100%;
+	max-width: 800px;
+}
+
+.dsic-field-inline {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.dsic-field-inline label {
+	margin-bottom: 0;
+}
+
+.dsic-field-description {
+	font-size: 12px;
+	color: #646970;
+	margin-top: 5px;
+	font-style: italic;
+}
+
+/* Available Placeholders */
+.dsic-available-placeholders {
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+	padding: 15px;
+	margin-top: 10px;
+}
+
+.dsic-available-placeholders h4 {
+	margin: 0 0 8px 0;
+	font-size: 13px;
+	color: #1d2327;
+}
+
+.dsic-placeholders-hint {
+	font-size: 12px;
+	color: #646970;
+	margin: 0 0 12px 0;
+}
+
+.dsic-placeholder-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 10px;
+}
+
+.dsic-placeholder-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.dsic-placeholder-code {
+	font-family: Consolas, Monaco, monospace;
+	background: #fff;
+	padding: 3px 6px;
+	border-radius: 3px;
+	font-size: 12px;
+	color: #d63638;
+	white-space: nowrap;
+	cursor: pointer;
+	border: 1px solid #dcdcde;
+	transition: background 0.2s ease;
+}
+
+.dsic-placeholder-code:hover {
+	background: #fff3cd;
+	border-color: #dba617;
+}
+
+.dsic-placeholder-desc {
+	font-size: 12px;
+	color: #50575e;
+	line-height: 1.5;
+}
+
+/* Template Actions */
+.dsic-template-actions {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #f0f0f1;
+	flex-wrap: wrap;
+}
+
+.dsic-test-email-input {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 5px 10px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.dsic-test-email-input label {
+	font-size: 12px;
+	font-weight: 600;
+	margin: 0;
+	white-space: nowrap;
+	color: #1d2327;
+}
+
+.dsic-test-email-input input[type="email"] {
+	width: 220px;
+	padding: 4px 8px;
+	font-size: 13px;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+}
+
+/* Make wp-editor work better in our context */
+.dsic-template-section .wp-editor-wrap {
+	max-width: 100%;
+}
+
+.dsic-template-section .wp-editor-container {
+	border: 1px solid #dcdcde;
+}
+
+.dsic-template-section .wp-editor-area {
+	width: 100%;
+}
+
+/* Stats Actions */
+.dsic-stats-actions {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #eee;
+}
+
+.dsic-stats-actions .button {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.dsic-stats-actions .button .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	margin-top: 2px;
+}
+
+/* Spinner for buttons */
+.dsic-spinner {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #0073aa;
+	border-radius: 50%;
+	animation: dsic-spin 1s linear infinite;
+	vertical-align: middle;
+}
+
+@keyframes dsic-spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* Email Template Responsive */
+@media screen and (max-width: 782px) {
+	.dsic-shortcodes-list code {
+		font-size: 11px;
+		padding: 3px 6px;
+	}
+
+	.dsic-email-actions {
+		flex-direction: column;
+	}
+
+	.dsic-email-actions .button {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+/* =============================================
+   Setup Help Accordions
+   ============================================= */
+
+.dsic-setup-help {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 1px solid #dcdcde;
+}
+
+.dsic-setup-help h3 {
+	margin: 0 0 15px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.dsic-accordion {
+	margin-bottom: 10px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.dsic-accordion-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	padding: 12px 15px;
+	background: #f6f7f7;
+	border: none;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 500;
+	color: #1d2327;
+	text-align: left;
+	transition: background-color 0.2s ease;
+}
+
+.dsic-accordion-header:hover {
+	background: #f0f0f1;
+}
+
+.dsic-accordion-header:focus {
+	outline: 2px solid #2271b1;
+	outline-offset: -2px;
+}
+
+.dsic-accordion-header .dashicons {
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+	color: #2271b1;
+}
+
+.dsic-accordion-icon {
+	margin-left: auto;
+	transition: transform 0.3s ease;
+}
+
+.dsic-accordion.is-open .dsic-accordion-icon {
+	transform: rotate(180deg);
+}
+
+.dsic-accordion-content {
+	display: none;
+	padding: 15px 20px;
+	background: #fff;
+	border-top: 1px solid #f0f0f1;
+}
+
+.dsic-accordion.is-open .dsic-accordion-content {
+	display: block;
+}
+
+.dsic-accordion-content ol {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.dsic-accordion-content ol li {
+	margin-bottom: 10px;
+	line-height: 1.6;
+}
+
+.dsic-accordion-content ol li:last-child {
+	margin-bottom: 0;
+}
+
+.dsic-accordion-content a {
+	color: #2271b1;
+	text-decoration: none;
+}
+
+.dsic-accordion-content a:hover {
+	text-decoration: underline;
+}
+
+.dsic-accordion-content code,
+.dsic-inline-code {
+	background: #f0f0f1;
+	padding: 2px 6px;
+	border-radius: 3px;
+	font-size: 12px;
+	color: #1d2327;
+}
+
+.dsic-event-list {
+	margin: 10px 0 0 20px;
+	list-style-type: disc;
+}
+
+.dsic-event-list li {
+	margin-bottom: 5px;
+}
+
+.dsic-note {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin-top: 15px;
+	padding: 12px 15px;
+	background: #f0f6fc;
+	border-left: 4px solid #2271b1;
+	border-radius: 0 4px 4px 0;
+	font-size: 13px;
+	color: #1d2327;
+}
+
+.dsic-note .dashicons {
+	flex-shrink: 0;
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	margin-top: 2px;
+	color: #2271b1;
+}
+
+.dsic-note-warning {
+	background: #fcf9e8;
+	border-left-color: #dba617;
+}
+
+.dsic-note-warning .dashicons {
+	color: #dba617;
+}
+
+/* Accordion Responsive */
+@media screen and (max-width: 782px) {
+	.dsic-accordion-header {
+		padding: 10px 12px;
+		font-size: 12px;
+	}
+
+	.dsic-accordion-content {
+		padding: 12px 15px;
+	}
+
+	.dsic-accordion-content ol {
+		padding-left: 15px;
+	}
+}
+
+/* Section Titles */
+.dsic-section-title {
+	margin: 30px 0 10px;
+	padding-top: 20px;
+	border-top: 1px solid #dcdcde;
+	font-size: 1.3em;
+	color: #1d2327;
+}
+
+.dsic-section-description {
+	margin: 0 0 20px;
+	color: #646970;
+}
+
+/* =============================================
+   Badges & Mode Indicators
+   ============================================= */
+
+.dsic-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.dsic-badge .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+.dsic-badge-success {
+	background: #edfaef;
+	color: #00a32a;
+	border: 1px solid #00a32a;
+}
+
+.dsic-badge-warning {
+	background: #fcf9e8;
+	color: #996800;
+	border: 1px solid #dba617;
+}
+
+.dsic-badge-small {
+	padding: 2px 8px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	vertical-align: middle;
+	margin-left: 8px;
+}
+
+.dsic-mode-indicator {
+	margin-top: 10px;
+}
+
+/* Section title with badge */
+.dsic-section-title .dsic-badge-small {
+	margin-left: 10px;
+}
+
+/* =============================================
+   Dashboard Notices
+   ============================================= */
+
+.dsic-dashboard-notice {
+	display: flex;
+	gap: 15px;
+	align-items: flex-start;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 8px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dsic-dashboard-notice > .dashicons {
+	flex-shrink: 0;
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+	margin-top: 2px;
+}
+
+.dsic-notice-content {
+	flex: 1;
+}
+
+.dsic-notice-content strong {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 8px;
+}
+
+.dsic-notice-content p {
+	margin: 0 0 15px;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #50575e;
+}
+
+.dsic-notice-error {
+	background: #fcf0f1;
+	border-color: #d63638;
+	border-left-width: 4px;
+}
+
+.dsic-notice-error > .dashicons {
+	color: #d63638;
+}
+
+.dsic-notice-error .dsic-notice-content strong {
+	color: #d63638;
+}
+
+.dsic-notice-warning {
+	background: #fcf9e8;
+	border-color: #dba617;
+	border-left-width: 4px;
+}
+
+.dsic-notice-warning > .dashicons {
+	color: #dba617;
+}
+
+.dsic-notice-warning .dsic-notice-content strong {
+	color: #996800;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+	.dsic-dashboard-notice {
+		flex-direction: column;
+		gap: 10px;
+		padding: 15px;
+	}
+
+	.dsic-dashboard-notice > .dashicons {
+		font-size: 24px;
+		width: 24px;
+		height: 24px;
+	}
+
+	.dsic-notice-content strong {
+		font-size: 14px;
+	}
+
+	.dsic-notice-content p {
+		font-size: 13px;
+	}
+}
