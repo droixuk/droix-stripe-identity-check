@@ -9,9 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added a public GitHub `README.md` explaining the DROIX use case, free non-commercial intent, plugin features, privacy model, and optional support via DROIX.store.
+- Added README UI screenshots under `docs/screenshots/` for the dashboard, settings, API, email templates, data retention, Linnworks, Slack settings, Slack messages, and debug screens.
 
 ### Changed
 - Updated WordPress.org-style `readme.txt` and plugin metadata for clearer public distribution messaging.
+- Reworked `README.md` and `readme.txt` positioning around Stripe account requirements, Stripe Identity costs, fraud-review workflows, and merchant setup.
 - Disabled bundled amount-threshold currency rates; multi-currency threshold checks now require rates supplied via `dsic_amount_threshold_exchange_rates` to avoid stale conversion data.
 - Defaulted Slack notification events to off for new installs so merchants opt in before sending order details to Slack.
 

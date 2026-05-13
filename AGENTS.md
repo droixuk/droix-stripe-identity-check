@@ -75,6 +75,17 @@ droix-stripe-id-check/
 ├── GEMINI.md                           # Reference to AGENTS.md
 ├── AGENTS.md                           # This file
 ├── LINNWORKS-API.md                    # Linnworks integration docs
+├── docs/
+│   └── screenshots/                    # README UI screenshots
+│       ├── dashboard.png
+│       ├── general-settings.png
+│       ├── api-settings.png
+│       ├── email-templates.png
+│       ├── data-retention.png
+│       ├── linnworks-integration.png
+│       ├── slack-notifications.png
+│       ├── slack-message.png
+│       └── debug-tools.png
 ├── assets/
 │   ├── css/
 │   │   ├── admin.css                   # Admin styles
@@ -290,4 +301,4 @@ droix-stripe-id-check-1.7.1.zip
 2. **Agent Responsibility:** Whenever an agent (Claude, Gemini, etc.) works on the project, it should check this file for guidance and update it if new relevant technical information is discovered.
 3. **Default Reference:** `CLAUDE.md` and `GEMINI.md` are configured to point to this file.
 
-*Last Updated: 2026-04-03 (Ver 1.10.1 - Documented pending-only enforcement and cancellation cleanup for checkout verification)*
+*Last Updated: 2026-05-13 (Ver 1.10.1 - Added public README screenshot assets including Slack message feed and documented docs/screenshots structure)*

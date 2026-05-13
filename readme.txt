@@ -8,28 +8,31 @@ Stable tag: 1.10.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WooCommerce integration for Stripe Identity verification, fraud-review workflows, and optional Linnworks order locking.
+Add Stripe Identity verification to WooCommerce for fraud-review orders, address mismatches, Radar signals, and high-value dispatches.
 
 == Description ==
 
-Stripe ID Check integrates Stripe Identity verification directly into WooCommerce. It helps ecommerce stores request ID checks for orders that need extra fraud review, such as high-value orders, different billing and shipping addresses, Stripe Radar risk signals, or Early Fraud Warnings.
+Stripe ID Check integrates Stripe Identity verification directly into WooCommerce so store teams can review risky orders before dispatch without building a custom KYC workflow.
 
-DROIX built this plugin after dealing with scam attempts against high-value handheld gaming device orders on our ecommerce stores. It helped us reduce risk while keeping the process clear for genuine customers. We are sharing the work for free so other ecommerce operators can adapt it to their own verification workflow.
+DROIX built this plugin after dealing with scam attempts against high-value handheld gaming device orders. The goal is practical: keep genuine customers moving, put risky orders on hold, and give operators a clear verification trail before releasing stock.
 
-The plugin is released under GPLv2 or later. If it helps your store, we would appreciate optional support through the DROIX marketplaces linked from https://DROIX.store.
+For the core flow, merchants only need their own Stripe account with Identity enabled. There are no bundled DROIX credentials, no separate KYC vendor account, and no custom verification app to manage. Optional Linnworks and Slack integrations only need credentials if you choose to enable them.
+
+The plugin is free and released under GPLv2 or later. Stripe Identity usage is billed separately by Stripe to your own Stripe account.
 
 = Features =
 
-* **One-Click Verification Requests** - Request ID verification directly from the order admin page
-* **Stripe Identity Integration** - Leverages Stripe's secure identity verification infrastructure
-* **Automatic Address Mismatch Checks** - Require verification when billing and shipping addresses are genuinely different
-* **Stripe Radar Support** - Trigger verification from Radar risk levels, risk scores, and Early Fraud Warnings
-* **Order Amount Thresholds** - Optionally request verification for orders above a configured value
-* **Automated Email Notifications** - Customizable emails for verification requests and results
-* **Real-time Status Updates** - Webhook-based status updates for immediate order processing
+* **WooCommerce Order Checks** - Request ID verification manually from order admin or with bulk actions
+* **Stripe Identity Flow** - Send customers through Stripe's hosted verification experience
+* **Address-Mismatch Automation** - Require verification when billing and shipping addresses are genuinely different
+* **Fraud Signal Triggers** - Trigger checks from Stripe Radar risk levels, risk scores, and Early Fraud Warnings
+* **Amount Thresholds** - Optionally request verification for orders above a configured value
+* **Customer Communication** - Customizable request, passed, failed, CRM, and data-redaction emails
+* **Real-Time Webhooks** - Update WooCommerce status when Stripe reports the verification result
+* **Admin Dashboard** - Track requests, link clicks, pass rate, pending checks, failed checks, and verification history
 * **Linnworks Integration** - Lock orders while verification is pending and unlock them when verification passes
-* **Slack Notifications** - Optional event notifications for internal teams
-* **Data Redaction Tools** - Request Stripe Identity data redaction when verification data is no longer needed
+* **Slack Notifications** - Send optional internal alerts for verification events
+* **Data Redaction Tools** - Request Stripe Identity data redaction after your configured retention period
 * **WooCommerce HPOS Compatible** - Works with High-Performance Order Storage
 * **WPML/Polylang Compatible** - Translate customer-facing messages and email templates
 
@@ -42,14 +45,29 @@ The plugin is released under GPLv2 or later. If it helps your store, we would ap
 * SSL certificate (HTTPS required for webhooks)
 * Optional: Linnworks account for order lock/unlock automation
 
+= Cost =
+
+Stripe ID Check does not add a plugin fee. Stripe Identity usage is billed by Stripe to your own Stripe account.
+
+Stripe pricing is localized and may change, so check the current Stripe Identity pricing page for your account region before rollout. Public examples as of 2026-05-13:
+
+* UK: Stripe lists ID document + selfie verification at GBP 1.25 per completed verification, with the first 50 verifications free.
+* US: Stripe lists ID document + selfie verification at US $1.50 per completed verification, with the first 50 verifications free.
+* ID number lookup is charged separately by Stripe if you enable that verification method.
+
+Current Stripe pricing:
+
+* https://stripe.com/gb/identity
+* https://stripe.com/us/identity
+
 = How It Works =
 
-1. Install and configure the plugin with your Stripe API keys
-2. Configure which orders should require verification
-3. The plugin places matching orders on hold and sends the customer a secure verification link
+1. Install and configure the plugin with your own Stripe API keys
+2. Choose which orders should require identity verification
+3. The plugin places matching orders on hold and sends the customer a secure Stripe Identity link
 4. Customer completes verification via Stripe's hosted verification page
 5. Stripe webhooks notify your store of the verification result
-6. WooCommerce order status, emails, logs, and optional Linnworks locks are updated
+6. WooCommerce order status, emails, logs, and optional Linnworks or Slack actions update automatically
 
 = Stripe Identity Verification =
 
@@ -58,6 +76,13 @@ Stripe Identity uses machine learning to verify government-issued IDs and match 
 * Passport
 * Driver's License
 * National ID Card
+
+= Optional Integrations =
+
+* **Stripe Radar** - Use payment risk signals and Early Fraud Warnings to trigger checks.
+* **Linnworks** - Lock orders while verification is pending and unlock them after a pass.
+* **Slack** - Notify internal teams when checks are triggered, passed, failed, or linked to Early Fraud Warnings.
+* **Data Retention** - Schedule Stripe Identity data redaction after your configured retention period.
 
 == Installation ==
 
@@ -87,7 +112,15 @@ Stripe Identity uses machine learning to verify government-issued IDs and match 
 
 = Do I need a Stripe account? =
 
-Yes, you need a Stripe account with Identity enabled. Stripe Identity may require additional verification of your business before it can be enabled.
+Yes. You need your own Stripe account with Identity enabled. Stripe Identity may require additional verification of your business before it can be enabled.
+
+= Do I need a separate KYC provider account? =
+
+No. The core verification flow uses Stripe Identity through your own Stripe account.
+
+= How much does it cost? =
+
+The plugin is free. Stripe bills Identity usage separately. Stripe pricing is region-specific and may change. As public examples on 2026-05-13, Stripe listed ID document + selfie verification at GBP 1.25 in the UK and US $1.50 in the US, charged when the customer completes verification, with the first 50 verifications free. Check Stripe's current Identity pricing for your account region before rollout.
 
 = What documents are supported? =
 
@@ -115,10 +148,15 @@ When verification fails, the order remains on hold and you receive a notificatio
 
 == Screenshots ==
 
-1. Plugin settings page - API configuration
-2. Order admin page with verification metabox
-3. Customer verification request email
-4. Stripe hosted verification page
+1. Verification dashboard showing request volume, link clicks, success rate, pending checks, failed checks, and verification history.
+2. General settings for verification requirements, address-mismatch automation, checkout notices, and customer messaging.
+3. API settings for live/test Stripe keys, webhook URL, connection testing, and optional Radar credentials.
+4. Email template editor with visual editing, placeholders, test sends, and reset-to-default controls.
+5. Data retention settings for automatic Stripe Identity data redaction and compliance reporting.
+6. Linnworks integration settings for order locking, unlocking, credential testing, and external REST API access.
+7. Slack notification settings for internal ID check event alerts.
+8. Slack message feed showing triggered and passed ID check alerts with direct order and Stripe links.
+9. Debug tools with system information and recent plugin logs for troubleshooting.
 
 == Changelog ==
 
